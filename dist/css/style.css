@@ -3039,6 +3039,7 @@ body.popup-show::after {
   margin-left: 0;
   position: relative;
   z-index: 1;
+  margin-left: -40px;
 }
 @media (min-width: 74.375em) {
   .contacts__body {
@@ -3053,6 +3054,11 @@ body.popup-show::after {
 @media (max-width: 20em) {
   .contacts__body {
     padding: 1.25rem;
+  }
+}
+@media (max-width: 1200px) {
+  .contacts__body {
+    margin-left: 0 !important;
   }
 }
 @media (min-width: 74.375em) {

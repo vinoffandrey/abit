@@ -837,7 +837,6 @@
 	}
 
 	&__container {
-		
 	}
 
 	&__body {
@@ -849,6 +848,10 @@
 		margin-left: 0;
 		position: relative;
 		z-index: 1;
+		margin-left: -40px;
+		@media(max-width: 1200px) {
+			margin-left: 0!important;
+		}
 	}
 	&__wrapper {
 		@include adaptiveValue("margin-top", 37, 17, $containerWidth, $minWidth, 1);
