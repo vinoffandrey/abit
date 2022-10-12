@@ -431,6 +431,13 @@
 				&:before {
 					background-image: url('../img/questions/plus_active.svg')!important;
 				}
+				@media (any-hover: hover){
+					&:hover{
+						&:before {
+							background-image: url('../img/questions/plus_active_hover.svg')!important;
+						}
+					} 
+				}
 			}
 		}
 	}
@@ -828,23 +835,18 @@
 	}
 
 	&__container {
-		position: relative;
-		z-index: 1;
-		margin-left: 18%;
-		max-width: 500px;
-		margin-right: auto;
-		@media(max-width: 1300px) {
-			margin-left: 5%!important;
-		}
-		@media(max-width: 1200px) {
-			margin-left: 0%!important;
-		}
+		
 	}
 
 	&__body {
 		background-color: $blueColor;
 		color: $whiteColor;
 		@include adaptiveValue("padding", 40, 20, $containerWidth, $minWidth, 1);
+		max-width: 500px;
+		margin-right: auto;
+		margin-left: 0;
+		position: relative;
+		z-index: 1;
 	}
 	&__wrapper {
 		@include adaptiveValue("margin-top", 37, 17, $containerWidth, $minWidth, 1);

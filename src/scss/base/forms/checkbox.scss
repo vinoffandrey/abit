@@ -16,7 +16,7 @@
 			left: 0;
 			width: 26px;
 			height: 26px;
-			background-color: $blueColor;
+			background-color: $whiteColor;
 			border: 1px solid $blueColor;
 		}
 		&:after {
@@ -39,10 +39,17 @@
 		opacity: 1;
 		visibility: visible;
 	}
-	
+	.checkbox__input:checked ~ .checkbox__label:before {
+		background-color: $blueColor;
+		border: 1px solid $blueColor;
+	}
 	.checkbox__input2:checked ~ .checkbox__label2:after {
 		opacity: 1;
 		visibility: visible;
+	}
+	.checkbox__input2:checked ~ .checkbox__label2:before {
+		background-color: $blueColor;
+		border: 1px solid $blueColor;
 	}
 	
 	// .checkbox__text
