@@ -2196,7 +2196,7 @@ body.popup-show::after {
   background-image: url("../img/questions/plus_active.svg") !important;
 }
 @media (any-hover: hover) {
-  .questions__line-title._spoller-active p:hover:before {
+  .questions__line-title._spoller-active:hover p:before {
     background-image: url("../img/questions/plus_active_hover.svg") !important;
   }
 }

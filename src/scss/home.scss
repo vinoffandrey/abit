@@ -431,13 +431,15 @@
 				&:before {
 					background-image: url('../img/questions/plus_active.svg')!important;
 				}
-				@media (any-hover: hover){
-					&:hover{
+			}
+			@media (any-hover: hover){
+				&:hover{
+					p {
 						&:before {
 							background-image: url('../img/questions/plus_active_hover.svg')!important;
 						}
-					} 
-				}
+					}
+				} 
 			}
 		}
 	}
