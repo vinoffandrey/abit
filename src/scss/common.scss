@@ -1,0 +1,55 @@
+// Заголовки, общие БЄМ блоки и проче...
+.title-1 {
+	font-weight: 700;
+	color: $whiteColor;
+	@include adaptiveValue("font-size", 60, 25, $containerWidth, $minWidth, 1);
+	@include adaptiveValue("line-height", 69, 34, $containerWidth, $minWidth, 1);
+}
+.title-2 {
+	font-weight: 700;
+	@include adaptiveValue("font-size", 40, 22, $containerWidth, $minWidth, 1);
+	@include adaptiveValue("line-height", 46, 23, $containerWidth, $minWidth, 1);
+}
+.title-3 {
+	font-weight: 700;
+	@include adaptiveValue("font-size", 30, 20, $containerWidth, $minWidth, 1);
+	@include adaptiveValue("line-height", 34, 17, $containerWidth, $minWidth, 1);
+}
+.title-4 {
+	font-weight: 400;
+	@include adaptiveValue("font-size", 24, 16, $containerWidth, $minWidth, 1);
+	@include adaptiveValue("line-height", 28, 20, $containerWidth, $minWidth, 1);
+	&.bold {
+		font-weight: 700;
+	}
+}
+
+.text-1 {
+	font-weight: 400;
+	@include adaptiveValue("font-size", 32, 18, $containerWidth, $minWidth, 1);
+	@include adaptiveValue("line-height", 37, 19, $containerWidth, $minWidth, 1);
+}
+.text-2 {
+	font-weight: 700;
+	@include adaptiveValue("font-size", 20, 17, $containerWidth, $minWidth, 1);
+	@include adaptiveValue("line-height", 23, 17, $containerWidth, $minWidth, 1);
+}
+.text-3 {
+	font-weight: 400;
+	@include adaptiveValue("font-size", 20, 16, $containerWidth, $minWidth, 1);
+	@include adaptiveValue("line-height", 23, 22, $containerWidth, $minWidth, 1);
+}
+.text-4 {
+	font-weight: 400;
+	@include adaptiveValue("font-size", 14, 13, $containerWidth, $minWidth, 1);
+	@include adaptiveValue("line-height", 16, 14, $containerWidth, $minWidth, 1);
+}
+.text-5 {
+	font-weight: 400;
+	@include adaptiveValue("font-size", 12, 11, $containerWidth, $minWidth, 1);
+	@include adaptiveValue("line-height", 16, 14, $containerWidth, $minWidth, 1);
+	&.bold {
+		font-weight: 700;
+	}
+}
+//========================================================================================================================================================

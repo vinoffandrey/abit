@@ -1,0 +1,158 @@
+//====================================================================================================
+.footer {
+	background-color: $blueColor2;
+	&__container {
+		color: $whiteColor;
+		@include adaptiveValue("padding-top", 90, 45, $containerWidth, $minWidth, 1);
+		@include adaptiveValue("padding-bottom", 40, 20, $containerWidth, $minWidth, 1);
+	}
+
+	&__body {
+		display: flex;
+		@include adaptiveValue("padding-bottom", 40, 20, $containerWidth, $minWidth, 1);
+		@include adaptiveValue("gap", 40, 30, $containerWidth, $minWidth, 1);
+		justify-content: space-between;
+		@media(max-width: $mobile) {
+			flex-direction: column;
+		}
+	}
+
+	&__column {
+		&:nth-child(1) {
+			flex: 0 1 260px;
+			@media(max-width: $mobile) {
+				flex: 0 0 auto!important;
+				display: flex;
+				align-items: center;
+			}
+		}
+		&:nth-child(2) {
+			flex: 0 1 206px;
+			@media(max-width: $mobile) {
+				flex: 0 0 auto!important;
+			}
+		}
+		&:nth-child(3) {
+			flex: 0 1 320px;
+			display: flex;
+			flex-direction: column;
+			@media(max-width: $mobile) {
+				@include adaptiveValue("gap", 40, 30, $containerWidth, $minWidth, 1);
+				flex: 0 0 auto!important;
+			}
+			
+		}
+	}
+
+	&__logo {
+		@media(max-width: $mobile) {
+			width: 200px;
+		}
+		img, picture {
+			max-width:100%;
+			height: auto;
+			@media(max-width: 1100px) {
+				max-width: 80%!important;
+			}
+			@media(max-width: $mobile) {
+				max-width: 80%!important;
+			}
+			@media(max-width: $mobileSmall) {
+				max-width: 80%!important;
+			}
+		}
+	}
+
+	&__copyright {
+		display: inline-block;
+		@include adaptiveValue("margin-top", 63, 20, $containerWidth, $minWidth, 1);
+		@media(max-width:$mobile) {
+			margin-top: 0!important;
+			@include adaptiveValue("margin-left", 63, 5, $containerWidth, $minWidth, 1);
+		}
+		img, picture {
+			@media(max-width: $mobileSmall) {
+				max-width: 80%!important;
+			}
+		}
+	}
+
+	&__column-top {
+		display: flex;
+		flex-direction: column;
+		@include adaptiveValue("gap", 13, 8, $containerWidth, $minWidth, 1);
+		flex: 1 1 auto;
+		@media(max-width: $mobile) {
+			flex: 0 1 auto!important;
+		}
+		a {
+			transition: all .3s ease 0s;
+		@media (any-hover: hover){
+			&:hover{
+				color: $orangeColor; 
+			} 
+		}
+		}
+	}
+
+	&__phone {
+	}
+
+	&__mail {
+	}
+
+	&__column-bottom {
+		display: flex;
+		flex-direction: column;
+		@include adaptiveValue("gap", 20, 10, $containerWidth, $minWidth, 1);
+		flex: 0 1 auto;
+		a {
+			transition: all .3s ease 0s;
+		@media (any-hover: hover){
+			&:hover{
+				color: $orangeColor; 
+			} 
+		}
+		@media(max-width: $mobile) {
+			flex: 0 1 auto!important;
+		}
+		}
+	}
+
+	&__privacy {
+	}
+
+	&__soglasie {
+	}
+
+	&__bottom {
+	}
+}
+.nav {
+
+	&__list {
+		ul {
+			display: flex;
+			flex-direction: column;
+			@include adaptiveValue("gap", 20, 10, $containerWidth, $minWidth, 1);
+		}
+	}
+
+	&__link {
+		transition: all .3s ease 0s;
+		cursor: pointer;
+		@media (any-hover: hover){
+			&:hover{
+				color: $orangeColor; 
+			} 
+		}
+	}
+}
+.text-2 {
+}
+.title-4 {
+}
+.bold {
+}
+
+//====================================================================================================

@@ -1,0 +1,186 @@
+//====================================================================================================
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: $whiteColor;
+	z-index: 2;
+	&__container {
+		max-width: 100%!important;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		@include adaptiveValue("padding-top", 28, 15, $containerWidth, $minWidth, 1);
+		@include adaptiveValue("padding-bottom", 28, 15, $containerWidth, $minWidth, 1);
+	}
+
+	&__logo {
+		@media(max-width: $mobile) {
+			width: 150px;
+		}
+		img, picture {
+			max-width:100%;
+			height: auto;
+			@media(max-width: 1100px) {
+				max-width: 80%!important;
+			}
+			@media(max-width: $mobile) {
+				max-width: 80%!important;
+			}
+		}
+	}
+
+	&__menu {
+		@include adaptiveValue("margin-right", 40, 10, $containerWidth, $minWidth, 1);
+		@include adaptiveValue("margin-left", 40, 10, $containerWidth, $minWidth, 1);
+		flex: 0 1 820px;
+		@media(max-width: 1200px) {
+			margin-right: 25px!important;
+			margin-left: 25px!important;
+		}
+		@media(max-width: $mobile) {
+			margin-right: 0!important;
+			margin-left: 15px!important;
+		}
+	}
+
+	&__links {
+		display: flex;
+		align-items: center;
+		@include adaptiveValue("gap", 38, 15, $containerWidth, $minWidth, 1);
+		@include adaptiveValue("margin-right", 40, 0, $containerWidth, $minWidth, 1);
+		@media(max-width: 1200px) {
+			gap: 15px!important;
+			margin-right: 0!important;
+		}
+	}
+
+	&__link {
+		transition: all .3s ease 0s;
+		@media (any-hover: hover){
+			&:hover{
+				color: $blueColor2;
+			} 
+		}
+	}
+}
+.menu {
+
+	&__icon {
+	}
+
+	&__body {
+	}
+
+	&__list {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__link {
+		cursor: pointer;
+		transition: all .3s ease 0s;
+		padding: 0 10px;
+		@media (any-hover: hover){
+			&:hover{
+				color: $blueColor2;
+				text-shadow: 0 0 .7px $blueColor2, 0 0 .7px $blueColor2;
+			} 
+		}
+	}
+}
+.icon-menu {
+}
+
+//====================================================================================================
+
+//====================================================================================================
+
+//Burger
+
+.icon-menu {
+	display: none;
+	@media (max-width: 1100px) {
+		display: block;
+		position: relative;
+		flex: 0 0 rem(30);
+		width: rem(30);
+		height: rem(18);
+		cursor: pointer;
+		z-index: 5;
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			left: 0;
+			position: absolute;
+			width: 100%;
+			height: rem(2);
+			background-color: #000;
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		span {
+			top: calc(50% - rem(1));
+		}
+		.menu-open & {
+			span {
+				transform: scale(0);
+			}
+			&::before {
+				transform: rotate(-45deg);
+				top: calc(50% - rem(1));
+			}
+			&::after {
+				transform: rotate(45deg);
+				bottom: calc(50% - rem(1));
+			}
+		}
+	}
+}
+
+@media (max-width: 1100px) {
+	.menu__body {
+		opacity: 0;
+		display: block;
+		visibility: hidden;
+		transform: translateX(1000px);
+		transition: all 0.5s ease 0s;
+		position: fixed;
+	}
+	.menu-open {
+		.menu__body {
+			opacity: 1;
+			visibility: visible;
+			transform: translateX(0px);
+			width: 100%;
+			height: 100%;
+			background-color: white;
+			left: 0;
+			top: 0;
+			z-index: 2;
+		}
+		.menu__list {
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			@include adaptiveValue("margin-top", 50, 50, 1, 767, $minWidth);
+			align-items: center;
+			li {
+				&:not(:last-child) {
+					@include adaptiveValue("margin-bottom", 30, 20, 1, 767, $minWidth);
+				}
+				a {
+					font-size: 16px !important;
+				}
+			}
+		}
+	}
+}

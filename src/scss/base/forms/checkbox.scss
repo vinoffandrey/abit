@@ -1,0 +1,51 @@
+.checkbox {
+	position: relative;
+	// .checkbox__input
+	&__input {
+		display: none;
+	}
+	// .checkbox__label
+	&__label {
+		cursor: pointer;
+		position: relative;
+		padding-left: 40px;
+		&:before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 26px;
+			height: 26px;
+			background-color: $blueColor;
+			border: 1px solid $blueColor;
+		}
+		&:after {
+			content: "";
+			position: absolute;
+			top: 7px;
+			left: 5px;
+			width: 17px;
+			height: 12px;
+			background-image: url('../img/quesntion/check.svg');
+			background-size: contain;
+			background-position: center;
+			background-repeat: no-repeat;
+			opacity: 0;
+			visibility: hidden;
+			transition: all .3s ease 0s;
+		}
+	}
+	.checkbox__input:checked ~ .checkbox__label:after {
+		opacity: 1;
+		visibility: visible;
+	}
+	
+	.checkbox__input2:checked ~ .checkbox__label2:after {
+		opacity: 1;
+		visibility: visible;
+	}
+	
+	// .checkbox__text
+	&__text {
+	}
+}

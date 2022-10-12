@@ -1,0 +1,25 @@
+//<BUTTONS (a.btn+tab)>
+// Снипет (HTML): btn
+
+.button {
+	@include adaptiveValue("padding-top", 10, 8, $containerWidth, $minWidth, 1);
+	@include adaptiveValue("padding-right", 36, 25, $containerWidth, $minWidth, 1);
+	@include adaptiveValue("padding-bottom", 10, 8, $containerWidth, $minWidth, 1);
+	@include adaptiveValue("padding-left", 36, 25, $containerWidth, $minWidth, 1);
+	background-color: rgba(239, 146, 27, 0.5);
+	color: $whiteColor;
+	cursor: pointer;
+	display: inline-block;
+	transition: all .3s ease 0s;
+	border: 1px solid $orangeColor;
+	&.active {
+		background-color: $orangeColor;
+		border: 1px solid $orangeColor;
+		@media (any-hover: hover){
+			&:hover{
+				background-color: $whiteColor;
+				color: $blackColor;
+			} 
+		}
+	}
+}

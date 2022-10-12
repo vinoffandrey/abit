@@ -1,0 +1,123 @@
+.swiper {
+	overflow: hidden;
+}
+.swiper-wrapper {
+	width: 100%;
+	height: 100%;
+	box-sizing: content-box;
+	display: flex;
+	position: relative;
+}
+.swiper-vertical {
+	.swiper-wrapper {
+		flex-direction: column;
+	}
+}
+.swiper-autoheight {
+	.swiper-wrapper {
+		align-items: flex-start;
+	}
+}
+.swiper-initialized {
+	.swiper-slide {
+		flex-shrink: 0;
+		// transition-property: transform;
+	}
+}
+.swiper-android {
+	.swiper-slide,
+	.swiper-wrapper {
+		transform: translate3d(0, 0, 0);
+	}
+}
+.swiper-button-lock {
+	display: none !important;
+}
+.bullets {
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+	margin-top: 40px;
+	@media(max-width: 991px) {
+		gap: 15px!important;
+		margin-top: 30px!important;
+	}
+	@media(max-width: 500px) {
+		gap: 10!important;
+		margin-top: 20px!important;
+	}
+	.swiper-pagination-bullet {
+		background-color: #fff;
+		width: 20px;
+		height: 20px;
+		border-radius: 0;
+		opacity: 1;
+		transition: all .3s ease 0s;
+		&.swiper-pagination-bullet-active {
+			background-color: #007AC0;
+		}
+		@media(max-width: 991px) {
+			width: 15px!important;
+			height: 15px!important;
+		}
+		@media(max-width: 500px) {
+			width: 12px!important;
+			height: 12px!important;
+		}
+	}
+}
+.arrows {
+	display: flex;
+	gap: 17px;
+	margin-left: 15px;
+	.arrow {
+		width: 46px;
+		height: 47px;
+		position: relative;
+		cursor: pointer;
+		@media(max-width: 991px) {
+			width: 40px!important;
+			height: 40px!important;
+		}
+		@media(max-width: 500px) {
+			width: 30px!important;
+			height: 30px!important;
+		}
+		&:after {
+			content: '';
+			width: 46px;
+			height: 47px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background-image: url('../img/keys/arrow.svg');
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			transition: all .3s ease 0s;
+			@media(max-width: 991px) {
+				width: 40px!important;
+				height: 40px!important;
+			}
+			@media(max-width: 500px) {
+				width: 30px!important;
+				height: 30px!important;
+			}
+		}
+		@media (any-hover: hover){
+			&:hover{
+				&:after {
+					background-image: url('../img/keys/arrow_hover.svg'); 
+				}
+			} 
+		}
+		&:active {
+			&:after {
+				background-image: url('../img/keys/arrow_hover.svg'); 
+			}
+		}
+		&:last-child {
+			transform: rotate(180deg);
+		}
+	}
+}

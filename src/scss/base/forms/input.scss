@@ -1,0 +1,33 @@
+//<INPUT>
+// Снипет (HTML): inp
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	&:focus {
+		outline: none;
+	}
+}
+.input {
+	border-radius: 0 !important;
+	width: 100%;
+	display: inline-block;
+	background-color: $whiteColor;
+	border: 1px solid $greyColor3;
+	color: $greyColor2;
+	@include adaptiveValue("padding", 10, 10, $containerWidth, $minWidth, 1);
+	font-weight: 400;
+	@include adaptiveValue("font-size", 20, 16, $containerWidth, $minWidth, 1);
+	@include adaptiveValue("line-height", 23, 22, $containerWidth, $minWidth, 1);
+	&._focus {
+	}
+	&._error {
+	}
+}
+textarea.input {
+	resize: none;
+	@include adaptiveValue("height", 110, 60, $containerWidth, $minWidth, 1);
+}
